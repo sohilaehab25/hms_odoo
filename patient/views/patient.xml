@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+
+        <!-- Define the action for the patient model -->
+        <record id="patient_action" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="res_model">patient</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <!-- Define the tree view for the patient model -->
+        <record id="patient_tree_view" model="ir.ui.view">
+            <field name="name">Patient Tree View</field>
+            <field name="model">patient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="age"/>
+                    <field name="blood_type"/>
+                    <field name="department_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Define the form view for the patient model -->
+        <record id="patient_form_view" model="ir.ui.view">
+            <field name="name">Patient Form View</field>
+            <field name="model">patient</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group string="General Information">
+                                <field name="first_name" required="1"/>
+                                <field name="last_name" required="1"/>
+                                <field name="age"/>
+                                <field name="pcr" />
+                                <field name="birth_date" string="Birth Date"/>
+                            </group>
+                            <group string="Health Information">
+                                <field name="blood_type"/>
+                                <field name="CR_ratio" attrs="{'required': [('pcr', '=', True)]}"/>
+                            </group>
+                        </group>
+                        <group string="Hospital Information">
+                            <field name="department_id"/>
+                            <field name="department_capacity"/>
+                            <field name="doctor_ids"/>
+                        </group>
+                        <group>
+                            <field name="history" attrs="{'invisible': [('age', '&lt;', 50)]}"/>
+                            <field name="pcr"/>
+                        </group>
+                        <group>
+                            <field name="state"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Define the menu item for the patient view -->
+        <menuitem name="Hospital" id="hospital_menu"/>
+        <menuitem name="Patient" id="patient_menu" parent="hospital_menu" sequence="2" action="patient_action"/>
+    </data>
+</odoo>
