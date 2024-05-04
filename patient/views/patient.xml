@@ -20,6 +20,8 @@
                     <field name="blood_type"/>
                     <field name="department_id"/>
                     <field name="state"/>
+                    <field name="email" string="Email"/>
+
                 </tree>
             </field>
         </record>
@@ -35,9 +37,10 @@
                             <group string="General Information">
                                 <field name="first_name" required="1"/>
                                 <field name="last_name" required="1"/>
-                                <field name="age"/>
+                                <field name="age" />
                                 <field name="pcr" />
                                 <field name="birth_date" string="Birth Date"/>
+                                <field name="email" string="Email"/>
                             </group>
                             <group string="Health Information">
                                 <field name="blood_type"/>
@@ -56,7 +59,26 @@
                         <group>
                             <field name="state"/>
                         </group>
-                    </sheet>
+                       <group string="Log History">
+                    <!-- One2many field to display log entries -->
+                    <field name="log_ids" >
+                        <tree>
+                            <field name="date"/>
+                            <field name="created_by"/>
+                            <field name="description"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="date" readonly="1"/>
+                                <field name="created_by" readonly="1"/>
+                                <field name="description"/>
+                            </group>
+                            <!-- Additional fields for log entry form -->
+                        </form>
+                    </field>
+                </group>
+                  
+                </sheet>
                 </form>
             </field>
         </record>

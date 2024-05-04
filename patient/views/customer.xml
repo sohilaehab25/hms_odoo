@@ -1,0 +1,27 @@
+
+<odoo>
+  <data>
+     <record id="crm_customer_form_view" model="ir.ui.view">
+        <field name="name">CRM.Customer.Form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales_purchases']" position="inside">
+                <group string="Misc">
+                    <field name="related_patient_id"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+<record id="view_partner_tree_inherit_website" model="ir.ui.view">
+    <field name="name">res.partner.tree.inherit.website</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_tree"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='display_name']" position="after">
+            <field name="website"/>
+        </xpath>
+    </field>
+</record>
+  </data>
+</odoo>
