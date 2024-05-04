@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record id = 'hospital_patient_report_action' model = 'ir.actions.report'>
+            <field name="name">Patient report</field>
+            <field name="model">patient</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">patient.patient_template</field>
+            <field name="report_file">patient.patient_template</field>
+            <field name="print_report_name">'Patient Report'</field>
+            <field name="binding_model_id" ref="model_patient"/>
+        </record>
+    </data>
+</odoo>
