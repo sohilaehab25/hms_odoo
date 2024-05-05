@@ -1,8 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 users_own_patient_access,Users Own Patient Access,model_patient,users_group,1,1,1,0
 users_own_patient_log_access,Users Own Patient Access,model_patient_log,users_group,1,1,1,0
-departments_read_access,Department Read Access,model_hms_department,users_group,1,0,0,0
 doctors_read_access,Doctor Read Access,model_hms_doctor,users_group,1,0,0,0
+departments_read_access,Department Read Access,model_hms_department,users_group,1,0,0,0
 managers_patient_access,Manager Patient Access,model_patient,manager_group,1,1,1,1
 managers_patient_log_access,Manager Patient Access,model_patient_log,manager_group,1,1,1,1
 managers_department_access,Manager Department Access,model_hms_department,manager_group,1,1,1,1

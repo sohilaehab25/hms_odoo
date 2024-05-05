@@ -14,7 +14,13 @@
 
                             </div>
                             <table class="table borderless" style="height:100px;">
+                            <tr class="text-center">
+                            <td>
+                            <img class="justify-end" t-att-src="'/web/image/hms.patient/' + str(o.id) + '/image'" style="max-width: 200px; max-height: 200px;"/>
+                            </td>
+                            </tr>
                                 <tr class="text-center">
+                                
                                     <td class=" mr-2 text-center">
                                        First Name:
                                         <span t-field="o.first_name"/>

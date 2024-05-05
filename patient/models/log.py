@@ -9,5 +9,3 @@ class PatientLog(models.Model):
     date = fields.Datetime(default=lambda self: fields.datetime.now())
     description = fields.Text()
     
-    
-    
